@@ -78,33 +78,20 @@ class LoginScreen extends StatelessWidget {
                 },
                 child: Text(
                   'Esqueceu a senha?',
-                  style: TextStyle(color: Colors.blue),
+                  style: TextStyle(color: const Color.fromARGB(255, 246, 246, 248)),
                 ),
               ),
               const SizedBox(height: 10),
-
-              // Botão Criar conta
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Não tem uma conta? ",
-                    style: TextStyle(color: Colors.white70),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Redireciona para a tela de cadastro de estudantes
-                      Navigator.pushNamed(context, AppRoutes.registerStudent);
-                    },
-                    child: Text(
-                      "Criar conta",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
+              
+              // Botão Criar conta (mesmo estilo do "Esqueceu a senha?")
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.registerStudent);
+                },
+                child: Text(
+                  'Não tem uma conta? Criar conta',
+                  style: TextStyle(color: const Color.fromARGB(255, 244, 245, 246)),
+                ),
               ),
 
               const SizedBox(height: 40),
