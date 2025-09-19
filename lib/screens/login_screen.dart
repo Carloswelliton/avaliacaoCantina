@@ -7,7 +7,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF20C997), // fundo
+      backgroundColor: const Color(0xFF20C997),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -15,23 +15,15 @@ class LoginScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
 
-              // chamar imagem
-              Center(
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 70,
-                      backgroundImage: AssetImage('assets/images/logo.png'),
-                      backgroundColor: Colors.transparent,
-                    ),
-                    const SizedBox(height: 10),
-                  ],
-                ),
+              // Logo
+              CircleAvatar(
+                radius: 70,
+                backgroundImage: AssetImage('assets/images/logo.png'),
+                backgroundColor: Colors.transparent,
               ),
-
               const SizedBox(height: 20),
 
-              // Título Login
+              // Título e subtítulo
               Text(
                 "Login",
                 style: TextStyle(
@@ -45,7 +37,6 @@ class LoginScreen extends StatelessWidget {
                 "Logar para continuar",
                 style: TextStyle(color: Colors.white70, fontSize: 16),
               ),
-
               const SizedBox(height: 30),
 
               // Campo Nome
@@ -72,27 +63,27 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: CustomButton(
                   text: "Logar",
-                  color: const Color(0xFF6F42C1), // Roxo
+                  color: const Color(0xFF6F42C1),
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.home);
                   },
                 ),
               ),
-
               const SizedBox(height: 20),
 
-              // Esqueci a senha
+              // Botão Esqueceu a senha
               TextButton(
                 onPressed: () {
-                  // ação esqueci senha
+                  Navigator.pushNamed(context, AppRoutes.forgotPassword);
                 },
                 child: Text(
-                  "Esqueci a senha",
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+                  'Esqueceu a senha?',
+                  style: TextStyle(color: Colors.blue),
                 ),
               ),
+              const SizedBox(height: 10),
 
-              // Criar conta
+              // Botão Criar conta
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -102,7 +93,8 @@ class LoginScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // ação criar conta
+                      // Redireciona para a tela de cadastro de estudantes
+                      Navigator.pushNamed(context, AppRoutes.registerStudent);
                     },
                     child: Text(
                       "Criar conta",
@@ -111,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
 
