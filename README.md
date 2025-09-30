@@ -77,4 +77,5 @@ O sistema garante que apenas estudantes em curso possam enviar feedback.
 
 - Permite solicitação de registro de novos estudantes que não estão na base de dados.
 
+## License
 [MIT](https://choosealicense.com/licenses/mit/)
