@@ -3,30 +3,39 @@ import '../widgets/custom_button.dart';
 import '../routes/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home')),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomButton(
-            text: 'Menu',
-            onPressed: () => Navigator.pushNamed(context, AppRoutes.menu),
-          ),
-          CustomButton(
-            text: 'Feedback',
-            onPressed: () => Navigator.pushNamed(context, AppRoutes.feedback),
-          ),
-          CustomButton(
-            text: 'Admin',
-            onPressed: () => Navigator.pushNamed(context, AppRoutes.admin),
-          ),
-          CustomButton(
-            text: 'Confirmation',
-            onPressed: () => Navigator.pushNamed(context, AppRoutes.confirmation),
-          ),
-        ],
+      backgroundColor: const Color(0xFF20C997),
+      appBar: AppBar(
+        title: const Text('Home'),
+        backgroundColor: const Color(0xFF20C997),
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomButton(
+              text: 'Feedback',
+              onPressed: () => Navigator.pushNamed(context, AppRoutes.feedback),
+            ),
+            const SizedBox(height: 16),
+            CustomButton(
+              text: 'Admin',
+              onPressed: () => Navigator.pushNamed(context, AppRoutes.admin),
+            ),
+            const SizedBox(height: 16),
+            CustomButton(
+              text: 'Confirmation',
+              onPressed: () =>
+                  Navigator.pushNamed(context, AppRoutes.confirmation),
+            ),
+          ],
+        ),
       ),
     );
   }
